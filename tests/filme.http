@@ -1,0 +1,22 @@
+### Listar filmes
+GET http://localhost:3000
+
+### Buscar filmes
+GET http://localhost:3000/A Proposta
+
+### Cadastrar filme
+POST http://localhost:3000
+Content-Type: application/json
+
+
+# {
+#     "titulo": "A Proposta",
+#     "genero": "Comédia romântica",
+#     "ano": 2009
+# }
+
+{
+    "titulo": "Viagem 2: A Ilha Misteriosa",
+    "genero": "Ficção Científica",
+    "ano": 2012
+}
