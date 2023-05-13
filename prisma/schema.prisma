@@ -1,0 +1,33 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Filmes {
+  id             Int              @id @default(autoincrement())
+  titulo         String           @unique
+  genero         String
+  ano            Int
+  FavoritosFilme FavoritosFilme[]
+}
+
+model Favoritos {
+  id             Int              @id @default(autoincrement())
+  titulo         String           @unique
+  FavoritosFilme FavoritosFilme[]
+}
+
+model FavoritosFilme {
+  id           Int       @id @default(autoincrement())
+  id_filmes    Int
+  filmes       Filmes    @relation(fields: [id_filmes], references: [id])
+  id_favoritos Int
+  favoritos    Favoritos @relation(fields: [id_favoritos], references: [id])
+}
