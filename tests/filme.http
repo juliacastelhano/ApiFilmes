@@ -4,6 +4,24 @@ GET http://localhost:3000
 ### Buscar filmes
 GET http://localhost:3000/A Proposta
 
+### Adicionar aos favoritos
+POST  http://localhost:3000/favoritos/28
+Content-Type: application/json
+
+{
+    "titulo" : "Garota Mimada"
+}
+
+# {
+#     "titulo": "A Proposta"
+# }
+
+### Deletar
+DELETE http://localhost:3000/A Proposta
+
+### Deletar dos favoritos
+# DELETE http://localhost:3000/2/A Proposta
+
 ### Cadastrar filme
 POST http://localhost:3000/filme
 Content-Type: application/json
@@ -11,7 +29,7 @@ Content-Type: application/json
 
 # {
 #     "titulo": "A Proposta",
-#     "genero": "Comédia romântica",
+#     "genero": "Comédia Romântica",
 #     "ano": 2009
 # }
 
@@ -20,3 +38,9 @@ Content-Type: application/json
     "genero": "Ficção Científica",
     "ano": 2012
 }
+
+# {
+#     "titulo": "Garota Mimada",
+#     "genero": "Comédia Romântica",
+#     "ano": 2008
+# }
