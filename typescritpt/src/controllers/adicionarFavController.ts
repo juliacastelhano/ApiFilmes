@@ -22,28 +22,37 @@ export class AdicionarFavoritos {
       response.status(500).json({ error: "Filme já adicionado!" });
     }
   }
+
+  async removerDosFavoritos(request: Request, response: Response) {
+    const { filmeId } = request.params;
+
+    try {
+      await prismaClient.favoritos.delete({
+        where: {
+          id: parseInt(filmeId),
+        },
+      });
+
+      return response.sendStatus(204);
+    } catch (e) {
+      response.status(500).json({ error: "Erro ao remover dos favoritos!" });
+    }
+  }
+
+  async listarFavoritos(request: Request, response: Response) {
+    try {
+      const favoritos = await prismaClient.favoritos.findMany({
+        include: {
+          Filmes: true,
+        },
+      });
+
+      return response.json(favoritos);
+    } catch (e) {
+      response.status(500).json({ error: "Erro ao listar favoritos!" });
+    }
+  }
 }
 
-// export class DeletarFav {
-//   async deletar(request: Request, response: Response) {
-//     const { id, titulo } = request.params;
 
-//     try {
-//       const deletar = await prismaClient.favoritos.delete({
-//         where: {
-//           id: parseInt(id),
-//           titulo,
-//         },
-//       });
-//       return response
-//         .status(200)
-//         .json({ message: "Filme deletado com sucesso!!!" });
-//     } catch (e) {
-//       return response
-//         .status(400)
-//         .json({
-//           message: "O filme que você está tentando deletar não foi cadastrado",
-//         });
-//     }
-//   }
-// }
+

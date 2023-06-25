@@ -1,15 +1,15 @@
 ### Listar filmes
-GET http://localhost:3000
+GET http://localhost:3001
 
 ### Buscar filmes
-GET http://localhost:3000/A Proposta
+GET http://localhost:3001/A Proposta
 
 ### Adicionar aos favoritos
-POST  http://localhost:3000/favoritos/28
+POST  http://localhost:3001/favoritos/titulo
 Content-Type: application/json
 
 {
-    "titulo" : "Garota Mimada"
+    "titulo" : "O Banqueiro"
 }
 
 # {
@@ -17,13 +17,13 @@ Content-Type: application/json
 # }
 
 ### Deletar
-DELETE http://localhost:3000/A Proposta
+DELETE http://localhost:3001/titulo
 
 ### Deletar dos favoritos
 # DELETE http://localhost:3000/2/A Proposta
 
 ### Cadastrar filme
-POST http://localhost:3000/filme
+POST http://localhost:3001/filme
 Content-Type: application/json
 
 
@@ -34,13 +34,19 @@ Content-Type: application/json
 # }
 
 {
-    "titulo": "Viagem 2: A Ilha Misteriosa",
-    "genero": "Ficção Científica",
-    "ano": 2012
+   "titulo": "Garota Mimada",
+   "genero": "Comédia Romântica",
+   "ano": 2008
 }
 
 # {
-#     "titulo": "Garota Mimada",
-#     "genero": "Comédia Romântica",
-#     "ano": 2008
+
+    #"titulo": "Viagem 2: A Ilha Misteriosa",
+    #"genero": "Ficção Científica",
+    #"ano": 2012
+    
 # }
+
+
+
+   

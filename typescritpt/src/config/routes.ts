@@ -13,13 +13,14 @@ const buscarFilme = new Busca();
 const listagem = new Listagem();
 const deletar = new Deletar();
 const favoritos = new AdicionarFavoritos();
-// const deletarFav = new DeletarFav();
+
 
 router.post("/filme", cadastro.cadastrar);
 router.get("/:titulo", buscarFilme.buscar);
 router.get("/", listagem.listar);
 router.delete("/:titulo", deletar.deletar);
-router.post("/favoritos/:filmesId", favoritos.adicionarFav);
-// router.delete("/:id/:titulo", deletarFav.deletar);
+router.post("/favoritos/:titulo", favoritos.adicionarFav);
+router.delete("/favoritos/:titulo", favoritos.removerDosFavoritos);
+router.get("/favoritos/:titulo", favoritos.listarFavoritos);
 
 export { router };

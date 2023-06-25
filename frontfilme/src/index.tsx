@@ -3,7 +3,9 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import CadastroFilme from "./components/pages/CadastroFilme";
+import ListarFilmes from "./components/pages/ListarFilmes";
 import Error from "./components/pages/Error";
+import ListarFavoritos from "./components/pages/Favoritos";
 
 const routes = createBrowserRouter([
   {
@@ -17,6 +19,15 @@ const routes = createBrowserRouter([
       {
         path: "/cadastrar",
         element: <CadastroFilme />,
+      },
+      {
+        path: "/listar",
+        element: <ListarFilmes />,
+      },
+
+      {
+        path: "/favoritos/:titulo",
+        element: <ListarFavoritos />,
       },
      
     ],

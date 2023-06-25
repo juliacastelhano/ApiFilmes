@@ -7,7 +7,12 @@ function Nav() {
         <li>
           <Link to="/cadastrar">Cadastrar</Link>
         </li>
-       
+        <li>
+          <Link to="/listar">Listar</Link>
+        </li>
+        <li>
+          <Link to="/favoritos/:titulo">Favoritos</Link>
+        </li>
       </ul>
     </nav>
   );
