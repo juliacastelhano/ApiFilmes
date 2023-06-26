@@ -25,7 +25,9 @@ const BuscarFilmes = () => {
       <TextField type="text" value={titulo} id="outlined-size-small" label="Digite o título do filme" onChange={(event) => setTitulo(event.target.value)}/>
       <br />
         <div>
-          <Button variant="contained" color="secondary" size="medium" onClick={buscarFilme}>Buscar</Button>
+          <Button variant="contained" color="secondary" size="medium" onClick={buscarFilme}>
+            Buscar
+            </Button>
           </div>
 
       {filmeEncontrado ? (

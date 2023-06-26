@@ -20,6 +20,7 @@ function ListarFilmes() {
     carregarDados();
   }, []);
 
+  
   function remover(titulo: String) {
     axios
       .delete(`http://localhost:3001/${titulo}`)

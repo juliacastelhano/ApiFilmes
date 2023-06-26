@@ -6,7 +6,7 @@ import CadastroFilme from "./components/pages/CadastroFilme";
 import ListarFilmes from "./components/pages/ListarFilmes";
 import Error from "./components/pages/Error";
 import Favoritos from "./components/pages/Favoritos";
-import BuscarFilmes from "./components/pages/buscarFilmes";
+import BuscarFilmes from "./components/pages/BuscarFilmes";
 
 const routes = createBrowserRouter([
   {
