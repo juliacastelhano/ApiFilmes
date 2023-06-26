@@ -3,7 +3,7 @@ import { prismaClient } from "../database/prismaClient";
 
 export class Cadastro {
   async cadastrar(request: Request, response: Response) {
-    const { titulo, genero, ano } = request.body;
+    const { titulo, genero, ano, estrelas } = request.body;
 
     try {
       const filme = await prismaClient.filmes.create({
@@ -11,6 +11,7 @@ export class Cadastro {
           titulo,
           genero,
           ano,
+          estrelas,
         },
       });
       return response.json(filme);

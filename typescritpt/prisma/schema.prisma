@@ -12,6 +12,7 @@ model Filmes {
   titulo      String     @unique
   genero      String
   ano         Int
+  estrelas    Int
   favoritos Favoritos[]
 }
 

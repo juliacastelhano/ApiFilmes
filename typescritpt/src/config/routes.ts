@@ -16,11 +16,11 @@ const favoritos = new AdicionarFavoritos();
 
 
 router.post("/filme", cadastro.cadastrar);
-router.get("/:titulo", buscarFilme.buscar);
+router.get("/filme/:titulo", buscarFilme.buscar);
 router.get("/", listagem.listar);
 router.delete("/:titulo", deletar.deletar);
-router.post("/favoritos/:titulo", favoritos.adicionarFav);
-router.delete("/favoritos/:titulo", favoritos.removerDosFavoritos);
+router.post("/favoritos/:filmesId", favoritos.adicionarFav);
+// router.delete("/favoritos/:titulo", favoritos.removerDosFavoritos);
 router.get("/favoritos/:titulo", favoritos.listarFavoritos);
 
 export { router };

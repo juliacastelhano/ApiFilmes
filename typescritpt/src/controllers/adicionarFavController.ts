@@ -20,6 +20,7 @@ export class AdicionarFavoritos {
       return response.json(favoritos);
     } catch (e) {
       response.status(500).json({ error: "Filme já adicionado!" });
+      console.log("erro");
     }
   }
 

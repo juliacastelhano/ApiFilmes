@@ -2,14 +2,14 @@
 GET http://localhost:3001
 
 ### Buscar filmes
-GET http://localhost:3001/A Proposta
+GET http://localhost:3001/filme/O Banqueiro
 
 ### Adicionar aos favoritos
-POST  http://localhost:3001/favoritos/titulo
+POST http://localhost:3001/favoritos/5
 Content-Type: application/json
 
 {
-    "titulo" : "O Banqueiro"
+    "titulo" : "Garota Mimada"
 }
 
 # {
@@ -17,10 +17,10 @@ Content-Type: application/json
 # }
 
 ### Deletar
-DELETE http://localhost:3001/titulo
+DELETE http://localhost:3001/Garota Mimada
 
 ### Deletar dos favoritos
-# DELETE http://localhost:3000/2/A Proposta
+DELETE http://localhost:3000/2/O Banqueiro
 
 ### Cadastrar filme
 POST http://localhost:3001/filme
@@ -30,21 +30,32 @@ Content-Type: application/json
 # {
 #     "titulo": "A Proposta",
 #     "genero": "Comédia Romântica",
-#     "ano": 2009
+#     "ano": 2009,
+#     "estrelas" : 10
+
 # }
 
 {
    "titulo": "Garota Mimada",
    "genero": "Comédia Romântica",
-   "ano": 2008
+   "ano": 2008,
+   "estrelas" : 8
 }
 
 # {
 
-    #"titulo": "Viagem 2: A Ilha Misteriosa",
-    #"genero": "Ficção Científica",
-    #"ano": 2012
+#     "titulo": "Viagem 2: A Ilha Misteriosa",
+#     "genero": "Ficção Científica",
+#     "ano": 2012,
+#    "estrelas" : 8
     
+# }
+
+# {
+#     "titulo" : "O Banqueiro",
+#     "genero" : "Drama",
+#     "ano" : 2020,
+#    "estrelas" : 9
 # }
 
 

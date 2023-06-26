@@ -1,19 +1,23 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { Filme } from '../../models/filme.model';
+import Button from "@mui/material/Button";
+import TextField from '@mui/material/TextField';
 
 function CadastroFilme() {
   const [titulo, setTitulo] = useState('');
   const [genero, setGenero] = useState('');
   const [ano, setAno] = useState('');
+  const [estrelas, setEstrelas] = useState('');
+
 
   function enviar() {
     let filmes: Filme = new Filme() ;
       filmes.titulo = titulo;
       filmes.genero = genero;
       filmes.ano = Number.parseInt(ano);
-    
-    
+      filmes.estrelas = Number.parseInt(estrelas);
+
     axios
       .post('http://localhost:3001/filme', filmes)
       .then((resposta) => {
@@ -28,34 +32,30 @@ function CadastroFilme() {
   }
 
   return (
-    <div>
-      <h1> Cadastrar Filme</h1>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <h1 style={{ fontFamily: 'Verdana, Geneva, Tahoma, sans-serif' }}> Cadastrar Filme</h1>
       <div>
-        <label>Título:</label>
-        <input
-          type="text"
-          value={titulo}
-          onChange={(event) => setTitulo(event.target.value)}
-        />
+      <TextField id="outlined-size-small" label="Título" onChange={(event) => setTitulo(event.target.value)}/>
       </div>
+      <br />
       <div>
-        <label>Gênero:</label>
-        <input
-          type="text"
-          value={genero}
-          onChange={(event) => setGenero(event.target.value)}
-        />
+        <TextField id="outlined-size-small" label="Gênero" onChange={(event) => setGenero(event.target.value)}/>
       </div>
+      <br />
       <div>
-        <label>Ano:</label>
-        <input
-          type="text"
-          value={ano}
-          onChange={(event) => setAno(event.target.value)}
-        />
+        <TextField id="outlined-size-small" label="Ano" onChange={(event) => setAno(event.target.value)}/>
       </div>
+      <br />
       <div>
-        <button onClick={enviar}>Cadastrar</button>
+        <TextField id="outlined-size-small" label="Estrelas" onChange={(event) => setEstrelas(event.target.value)}/>
+      </div>
+      <br />
+      <div>
+      <Button variant="contained" color="secondary" size="medium" onClick={enviar}>
+          Cadastrar
+        </Button>
+      <div>
+      </div>
       </div>
     </div>
   );

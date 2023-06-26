@@ -5,7 +5,8 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import CadastroFilme from "./components/pages/CadastroFilme";
 import ListarFilmes from "./components/pages/ListarFilmes";
 import Error from "./components/pages/Error";
-import ListarFavoritos from "./components/pages/Favoritos";
+import Favoritos from "./components/pages/Favoritos";
+import BuscarFilmes from "./components/pages/buscarFilmes";
 
 const routes = createBrowserRouter([
   {
@@ -24,10 +25,13 @@ const routes = createBrowserRouter([
         path: "/listar",
         element: <ListarFilmes />,
       },
-
       {
-        path: "/favoritos/:titulo",
-        element: <ListarFavoritos />,
+        path: "/favoritos/:filmesId",
+        element: <Favoritos />,
+      },
+      {
+        path: "/buscar/:titulo",
+        element: <BuscarFilmes />,
       },
      
     ],

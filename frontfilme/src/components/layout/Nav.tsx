@@ -4,15 +4,19 @@ function Nav() {
   return (
     <nav>
       <ul>
-        <li>
-          <Link to="/cadastrar">Cadastrar</Link>
+        <li style={{ fontFamily: 'Verdana, Geneva, Tahoma, sans-serif', fontWeight: 'bold'}}>
+          <Link to="/cadastrar" style={{ textDecoration: 'none' }}>Cadastrar</Link>
         </li>
-        <li>
-          <Link to="/listar">Listar</Link>
+        <li style={{ fontFamily: 'Verdana, Geneva, Tahoma, sans-serif', fontWeight: 'bold' }}>
+          <Link to="/listar" style={{ textDecoration: 'none' }}>Listar</Link>
         </li>
-        <li>
-          <Link to="/favoritos/:titulo">Favoritos</Link>
+        <li style={{ fontFamily: 'Verdana, Geneva, Tahoma, sans-serif', fontWeight: 'bold' }}>
+          <Link to="/buscar/:titulo" style={{ textDecoration: 'none' }}>Buscar</Link>
         </li>
+        <li style={{ fontFamily: 'Verdana, Geneva, Tahoma, sans-serif', fontWeight: 'bold' }}>
+          <Link to="/favoritos/:filmesId" style={{ textDecoration: 'none' }}>Favoritos</Link>
+        </li>
+
       </ul>
     </nav>
   );
