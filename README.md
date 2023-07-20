@@ -1,4 +1,4 @@
-# trabalhoTopicos
+# ApiFilmes
 
 Projeto realizado para a disciplina de Tópicos especiais em Sistemas com a colaboração de Julia Castelhano, Isabelle Almeida e Ana Carolina.
 
